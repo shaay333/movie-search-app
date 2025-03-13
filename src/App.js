@@ -4,12 +4,10 @@ import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import MovieList from './components/MovieList';
 import Favorites from './components/Favorites';
-import NotFound from './components/NotFound';  // New 404 Page
+import NotFound from './components/NotFound';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; // Toastify CSS
-import './App.css'; // Updated styling
-import { BrowserRouter as Router } from 'react-router-dom';
-
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -34,7 +32,7 @@ function App() {
   const handlePageChange = (newPage) => {
     if (newPage < 1) return;
     setPage(newPage);
-    fetchMovies('a', newPage); // Example query for pagination
+    fetchMovies('batman', newPage); // Example query for pagination
   };
 
   return (
@@ -75,7 +73,7 @@ function App() {
             }
           />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="*" element={<NotFound />} />  {/* 404 Page */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
