@@ -8,6 +8,8 @@ import NotFound from './components/NotFound';  // New 404 Page
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Toastify CSS
 import './App.css'; // Updated styling
+import { BrowserRouter as Router } from 'react-router-dom';
+
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -36,7 +38,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/movie-search-app">
       <div className="App">
         <ToastContainer position="top-right" autoClose={3000} />
 
